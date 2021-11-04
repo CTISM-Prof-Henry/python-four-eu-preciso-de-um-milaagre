@@ -321,7 +321,7 @@ def main(path: str = '.', db_name: str = 'test.db') -> None:
                     'tipo': 'Profissional'
                 },
                 {
-                    'id_atleta': 2021314,
+                    'id_atleta': 2021312,
                     'nome': 'Vicent Gerald',
                     'Idade': 34,
                     'id_time': 2021301,
