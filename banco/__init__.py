@@ -117,417 +117,417 @@ def main(path: str = '.', db_name: str = 'test.db') -> None:
             ['PRIMARY KEY(id_tecnico, id_time)', 'FOREIGN KEY(id_tecnico) '
             'REFERENCES tecnico(id)', 'FOREIGN KEY(id_time) REFERENCES time(id)'] )
 
-    insert_rows(   #inserindo os dados da tebela tecnico
-        cursor,
-        'TECNICO',
-        [
-            {
-                #krim mercator
-                'id_tecnico': 20211,
-                'nome': 'Natalia Derepasko',
-                'país': 'Eslovenia',
-                'id_time': 2021201,
-                'codigo_cadastro': 202112021201,
-                'ja_foi_atleta': 'Sim',
-                'treina_o_naipe': 'Feminino'
-            },
-            {
-                #Odense Handebold
-                'id_tecnico': 20212,
-                'nome': 'Ulrik Kirkely',
-                'país': 'Dinamarca',
-                'id_time': 2021202,
-                'codigo_cadastro': 202122021202,
-                'ja_foi_atleta': 'Sim',
-                'treina_o_naipe': 'Feminino'
-            },
-            {
-                #Rocasa Gran Canaria
-                'id_tecnico': 20213,
-                'nome': 'Robert Cuesta',
-                'país': 'Espanha',
-                'id_time': 2021203,
-                'codigo_cadastro': 202132021203,
-                'ja_foi_atleta': 'Sim',
-                'treina_o_naipe': 'Feminino'
-            },
-            {
-                #PSG
-                'id_tecnico': 202104,
-                'nome': 'Regis Boxele',
-                'país': 'França',
-                'id_time': 2021301,
-                'codigo_cadastro': 2021042021301,
-                'ja_foi_atleta': 'Sim',
-                'treina_o_naipe': 'Masculino'
-            },
-            {
-                #RK
-                'id_tecnico': 202105,
-                'nome': 'Miodrag Kazic',
-                'país': 'Montenegro',
-                'id_time': 2021302,
-                'codigo_cadastro': 2021052021302,
-                'ja_foi_atleta': 'Sim',
-                'treina_o_naipe': 'Masculino'
-            },
-            {
-                #Bevo HC
-                'id_tecnico': 202106,
-                'nome': 'Peter Kersten',
-                'país': 'Paises Baixos',
-                'id_time': 2021303,
-                'codigo_cadastro': 2021062021303,
-                'ja_foi_atleta': 'Sim',
-                'treina_o_naipe': 'Masculino'
-            },
-        ]
-    )
+        insert_rows(   #inserindo os dados da tebela tecnico
+            cursor,
+            'TECNICOS',
+            [
+                {
+                    #krim mercator
+                    'id_tecnico': 20211,
+                    'nome': 'Natalia Derepasko',
+                    'país': 'Eslovenia',
+                    'id_time': 2021201,
+                    'codigo_cadastro': 202112021201,
+                    'ja_foi_atleta': 'Sim',
+                    'treina_o_naipe': 'Feminino'
+                },
+                {
+                    #Odense Handebold
+                    'id_tecnico': 20212,
+                    'nome': 'Ulrik Kirkely',
+                    'país': 'Dinamarca',
+                    'id_time': 2021202,
+                    'codigo_cadastro': 202122021202,
+                    'ja_foi_atleta': 'Sim',
+                    'treina_o_naipe': 'Feminino'
+                },
+                {
+                    #Rocasa Gran Canaria
+                    'id_tecnico': 20213,
+                    'nome': 'Robert Cuesta',
+                    'país': 'Espanha',
+                    'id_time': 2021203,
+                    'codigo_cadastro': 202132021203,
+                    'ja_foi_atleta': 'Sim',
+                    'treina_o_naipe': 'Feminino'
+                },
+                {
+                    #PSG
+                    'id_tecnico': 202104,
+                    'nome': 'Regis Boxele',
+                    'país': 'França',
+                    'id_time': 2021301,
+                    'codigo_cadastro': 2021042021301,
+                    'ja_foi_atleta': 'Sim',
+                    'treina_o_naipe': 'Masculino'
+                },
+                {
+                    #RK
+                    'id_tecnico': 202105,
+                    'nome': 'Miodrag Kazic',
+                    'país': 'Montenegro',
+                    'id_time': 2021302,
+                    'codigo_cadastro': 2021052021302,
+                    'ja_foi_atleta': 'Sim',
+                    'treina_o_naipe': 'Masculino'
+                },
+                {
+                    #Bevo HC
+                    'id_tecnico': 202106,
+                    'nome': 'Peter Kersten',
+                    'país': 'Paises Baixos',
+                    'id_time': 2021303,
+                    'codigo_cadastro': 2021062021303,
+                    'ja_foi_atleta': 'Sim',
+                    'treina_o_naipe': 'Masculino'
+                },
+            ]
+        )
 
-    insert_rows( #inserindo os dados da tabela atleta
-        cursor,
-        'ATLETAS',
-        [
-            {
-                'id_atleta': 2021001,
-                'nome': 'Babi Arenhart',
-                'Idade': 35,
-                'id_time': 2021201,
-                'categoria': 'Adulto',
-                'posição': 'Goleira',
-                'codigo_cadastro': 20210012021201,
-                'país': 'Brasil',
-                'Naipe': 'Feminino',
-                'tipo': 'Profissional'
-            },
-            {
-                'id_atleta': 2021002,
-                'nome': 'Katarina Krpez',
-                'Idade': 33,
-                'id_time': 2021201,
-                'categoria': 'Adulto',
-                'posição': 'Ponta',
-                'codigo_cadastro': 20210022021201,
-                'país': 'Servia',
-                'Naipe': 'Feminino',
-                'tipo': 'Profissional'
-            },
-            {
-                'id_atleta': 2021003,
-                'nome': 'Nina Zabjek',
-                'Idade': 23,
-                'id_time': 2021201,
-                'categoria': 'Adulto',
-                'posição': 'Central',
-                'codigo_cadastro': 20210032021201,
-                'país': 'Eslovenia',
-                'Naipe': 'Feminino',
-                'tipo': 'Profissional'
-            },
-            {
-                'id_atleta': 2021104,
-                'nome': 'Lois Abbingh',
-                'Idade': 29,
-                'id_time': 2021202,
-                'categoria': 'Adulto',
-                'posição': 'Armadora',
-                'codigo_cadastro': 20211042021202,
-                'país': 'França',
-                'Naipe': 'Feminino',
-                'tipo': 'Profissional'
-            },
-            {
-                'id_atleta': 2021105,
-                'nome': 'Kamilla Larsen',
-                'Idade': 38,
-                'id_time': 2021202,
-                'categoria': 'Adulto',
-                'posição': 'Pivo',
-                'codigo_cadastro': 20211052021202,
-                'país': 'Dinamarca',
-                'Naipe': 'Feminino',
-                'tipo': 'Profissional'
-            },
-            {
-                'id_atleta': 2021106,
-                'nome': 'Freja Cohrt',
-                'Idade': 27,
-                'id_time': 2021202,
-                'categoria': 'Adulto',
-                'posição': 'Ponta',
-                'codigo_cadastro': 20211062021202,
-                'país': 'Dinamarca',
-                'Naipe': 'Feminino',
-                'tipo': 'Profissional'
-            },
-            {
-                'id_atleta': 2021107,
-                'nome': 'Rikke Iversen',
-                'Idade': 28,
-                'id_time': 2021202,
-                'categoria': 'Adulto',
-                'posição': 'Pivo',
-                'codigo_cadastro': 20211072021202,
-                'país': 'Dinamarca',
-                'Naipe': 'Feminino',
-                'tipo': 'Profissional'
-            },
-            {
-                'id_atleta': 2021208,
-                'nome': 'Silvia Navarro',
-                'Idade': 42,
-                'id_time': 2021203,
-                'categoria': 'Adulto',
-                'posição': 'Goleira',
-                'codigo_cadastro': 20213082021203,
-                'país': 'Espanha',
-                'Naipe': 'Feminino',
-                'tipo': 'Profissional'
-            },
-            {
-                'id_atleta': 2021209,
-                'nome': 'Mizuki Hosoe',
-                'Idade': 28,
-                'id_time': 2021203,
-                'categoria': 'Adulto',
-                'posição': 'Central',
-                'codigo_cadastro': 20213092021203,
-                'país': 'Japao',
-                'Naipe': 'Feminino',
-                'tipo': 'Profissional'
-            },
-            {
-                'id_atleta': 2021210,
-                'nome': 'Agni Zygoura',
-                'Idade': 25,
-                'id_time': 2021203,
-                'categoria': 'Adulto',
-                'posição': 'Central',
-                'codigo_cadastro': 20213102021203,
-                'país': 'Grecia',
-                'Naipe': 'Feminino',
-                'tipo': 'Profissional'
-            },
-            {
-                'id_atleta': 2021211,
-                'nome': 'Rosana Martinez',
-                'Idade': 17,
-                'id_time': 2021203,
-                'categoria': 'Adulto',
-                'posição': 'Armadora',
-                'codigo_cadastro': 20213112021203,
-                'país': 'Espanha',
-                'Naipe': 'Feminino',
-                'tipo': 'Profissional'
-            },
-            {
-                'id_atleta': 2021314,
-                'nome': 'Vicent Gerald',
-                'Idade': 34,
-                'id_time': 2021301,
-                'categoria': 'Adulto',
-                'posição': 'Goleiro',
-                'codigo_cadastro': 20214122021301,
-                'país': 'França',
-                'Naipe': 'Masculino',
-                'tipo': 'Profissional'
-            },
-            {
-                'id_atleta': 2021313,
-                'nome': 'Leo Villain',
-                'Idade': 18,
-                'id_time': 2021301,
-                'categoria': 'Adulto',
-                'posição': 'Goleiro',
-                'codigo_cadastro': 20214132021301,
-                'país': 'França',
-                'Naipe': 'Masculino',
-                'tipo': 'Profissional'
-            },
-            {
-                'id_atleta': 2021314,
-                'nome': 'Loik Spady',
-                'Idade': 21,
-                'id_time': 2021301,
-                'categoria': 'Adulto',
-                'posição': 'Goleiro',
-                'codigo_cadastro': 20214142021301,
-                'país': 'França',
-                'Naipe': 'Masculino',
-                'tipo': 'Profissional'
-            },
-            {
-                'id_atleta': 2021315,
-                'nome': 'Yann Genty',
-                'Idade': 39,
-                'id_time': 2021301,
-                'categoria': 'Adulto',
-                'posição': 'Goleiro',
-                'codigo_cadastro': 20214152021301,
-                'país': 'França',
-                'Naipe': 'Masculino',
-                'tipo': 'Profissional'
-            }
-        ]
-    )
-    insert_rows(
-        cursor,
-        'TIMES',
-        [
-            {
-                'id_time': 2021001,
-                'nome': 'Krim Mercator',
-                'id_tecnico': 20211,
-                'Naipe': 'Feminino',
-                'país': 'Eslovenia',
-                'tipo': 'Profissional',
-                'Competição_atual': 'EHF CHAMPIONS LEAGUE'
+        insert_rows( #inserindo os dados da tabela atleta
+            cursor,
+            'ATLETAS',
+            [
+                {
+                    'id_atleta': 2021001,
+                    'nome': 'Babi Arenhart',
+                    'Idade': 35,
+                    'id_time': 2021201,
+                    'categoria': 'Adulto',
+                    'posição': 'Goleira',
+                    'codigo_cadastro': 20210012021201,
+                    'país': 'Brasil',
+                    'Naipe': 'Feminino',
+                    'tipo': 'Profissional'
+                },
+                {
+                    'id_atleta': 2021002,
+                    'nome': 'Katarina Krpez',
+                    'Idade': 33,
+                    'id_time': 2021201,
+                    'categoria': 'Adulto',
+                    'posição': 'Ponta',
+                    'codigo_cadastro': 20210022021201,
+                    'país': 'Servia',
+                    'Naipe': 'Feminino',
+                    'tipo': 'Profissional'
+                },
+                {
+                    'id_atleta': 2021003,
+                    'nome': 'Nina Zabjek',
+                    'Idade': 23,
+                    'id_time': 2021201,
+                    'categoria': 'Adulto',
+                    'posição': 'Central',
+                    'codigo_cadastro': 20210032021201,
+                    'país': 'Eslovenia',
+                    'Naipe': 'Feminino',
+                    'tipo': 'Profissional'
+                },
+                {
+                    'id_atleta': 2021104,
+                    'nome': 'Lois Abbingh',
+                    'Idade': 29,
+                    'id_time': 2021202,
+                    'categoria': 'Adulto',
+                    'posição': 'Armadora',
+                    'codigo_cadastro': 20211042021202,
+                    'país': 'França',
+                    'Naipe': 'Feminino',
+                    'tipo': 'Profissional'
+                },
+                {
+                    'id_atleta': 2021105,
+                    'nome': 'Kamilla Larsen',
+                    'Idade': 38,
+                    'id_time': 2021202,
+                    'categoria': 'Adulto',
+                    'posição': 'Pivo',
+                    'codigo_cadastro': 20211052021202,
+                    'país': 'Dinamarca',
+                    'Naipe': 'Feminino',
+                    'tipo': 'Profissional'
+                },
+                {
+                    'id_atleta': 2021106,
+                    'nome': 'Freja Cohrt',
+                    'Idade': 27,
+                    'id_time': 2021202,
+                    'categoria': 'Adulto',
+                    'posição': 'Ponta',
+                    'codigo_cadastro': 20211062021202,
+                    'país': 'Dinamarca',
+                    'Naipe': 'Feminino',
+                    'tipo': 'Profissional'
+                },
+                {
+                    'id_atleta': 2021107,
+                    'nome': 'Rikke Iversen',
+                    'Idade': 28,
+                    'id_time': 2021202,
+                    'categoria': 'Adulto',
+                    'posição': 'Pivo',
+                    'codigo_cadastro': 20211072021202,
+                    'país': 'Dinamarca',
+                    'Naipe': 'Feminino',
+                    'tipo': 'Profissional'
+                },
+                {
+                    'id_atleta': 2021208,
+                    'nome': 'Silvia Navarro',
+                    'Idade': 42,
+                    'id_time': 2021203,
+                    'categoria': 'Adulto',
+                    'posição': 'Goleira',
+                    'codigo_cadastro': 20213082021203,
+                    'país': 'Espanha',
+                    'Naipe': 'Feminino',
+                    'tipo': 'Profissional'
+                },
+                {
+                    'id_atleta': 2021209,
+                    'nome': 'Mizuki Hosoe',
+                    'Idade': 28,
+                    'id_time': 2021203,
+                    'categoria': 'Adulto',
+                    'posição': 'Central',
+                    'codigo_cadastro': 20213092021203,
+                    'país': 'Japao',
+                    'Naipe': 'Feminino',
+                    'tipo': 'Profissional'
+                },
+                {
+                    'id_atleta': 2021210,
+                    'nome': 'Agni Zygoura',
+                    'Idade': 25,
+                    'id_time': 2021203,
+                    'categoria': 'Adulto',
+                    'posição': 'Central',
+                    'codigo_cadastro': 20213102021203,
+                    'país': 'Grecia',
+                    'Naipe': 'Feminino',
+                    'tipo': 'Profissional'
+                },
+                {
+                    'id_atleta': 2021211,
+                    'nome': 'Rosana Martinez',
+                    'Idade': 17,
+                    'id_time': 2021203,
+                    'categoria': 'Adulto',
+                    'posição': 'Armadora',
+                    'codigo_cadastro': 20213112021203,
+                    'país': 'Espanha',
+                    'Naipe': 'Feminino',
+                    'tipo': 'Profissional'
+                },
+                {
+                    'id_atleta': 2021314,
+                    'nome': 'Vicent Gerald',
+                    'Idade': 34,
+                    'id_time': 2021301,
+                    'categoria': 'Adulto',
+                    'posição': 'Goleiro',
+                    'codigo_cadastro': 20214122021301,
+                    'país': 'França',
+                    'Naipe': 'Masculino',
+                    'tipo': 'Profissional'
+                },
+                {
+                    'id_atleta': 2021313,
+                    'nome': 'Leo Villain',
+                    'Idade': 18,
+                    'id_time': 2021301,
+                    'categoria': 'Adulto',
+                    'posição': 'Goleiro',
+                    'codigo_cadastro': 20214132021301,
+                    'país': 'França',
+                    'Naipe': 'Masculino',
+                    'tipo': 'Profissional'
+                },
+                {
+                    'id_atleta': 2021314,
+                    'nome': 'Loik Spady',
+                    'Idade': 21,
+                    'id_time': 2021301,
+                    'categoria': 'Adulto',
+                    'posição': 'Goleiro',
+                    'codigo_cadastro': 20214142021301,
+                    'país': 'França',
+                    'Naipe': 'Masculino',
+                    'tipo': 'Profissional'
+                },
+                {
+                    'id_atleta': 2021315,
+                    'nome': 'Yann Genty',
+                    'Idade': 39,
+                    'id_time': 2021301,
+                    'categoria': 'Adulto',
+                    'posição': 'Goleiro',
+                    'codigo_cadastro': 20214152021301,
+                    'país': 'França',
+                    'Naipe': 'Masculino',
+                    'tipo': 'Profissional'
+                }
+            ]
+        )
+        insert_rows(
+            cursor,
+            'TIMES',
+            [
+                {
+                    'id_time': 2021001,
+                    'nome': 'Krim Mercator',
+                    'id_tecnico': 20211,
+                    'Naipe': 'Feminino',
+                    'país': 'Eslovenia',
+                    'tipo': 'Profissional',
+                    'Competição_atual': 'EHF CHAMPIONS LEAGUE'
 
-            },
-            {
-                'id_time': 2021102,
-                'nome': 'Odense Handbold',
-                'id_tecnico': 20212,
-                'Naipe': 'Feminino',
-                'país': 'Dinamarca',
-                'tipo': 'Profissional',
-                'Competição_atual': 'EHF CHAMPIONS LEAGUE'
-            },
-            {
-                'id_time': 2021203,
-                'nome': 'Rocasa Gran Canaria',
-                'id_tecnico': 20213,
-                'Naipe': 'Feminino',
-                'país': 'Espanha',
-                'tipo': 'Profissional',
-                'Competição_atual': 'EHF EUROPEAN CUP'
+                },
+                {
+                    'id_time': 2021102,
+                    'nome': 'Odense Handbold',
+                    'id_tecnico': 20212,
+                    'Naipe': 'Feminino',
+                    'país': 'Dinamarca',
+                    'tipo': 'Profissional',
+                    'Competição_atual': 'EHF CHAMPIONS LEAGUE'
+                },
+                {
+                    'id_time': 2021203,
+                    'nome': 'Rocasa Gran Canaria',
+                    'id_tecnico': 20213,
+                    'Naipe': 'Feminino',
+                    'país': 'Espanha',
+                    'tipo': 'Profissional',
+                    'Competição_atual': 'EHF EUROPEAN CUP'
 
-            },
-            {
-                'id_time': 2021301,
-                'nome': 'PARIS SANG GERMAIN Handball',
-                'id_tecnico': 202104,
-                'Naipe': 'Masculino',
-                'país': 'Dinamarca',
-                'tipo': 'Profissional',
-                'Competição_atual': 'EHF CHAMPIONS LEAGUE'
-            },
-            {
-                'id_time': 2021302,
-                'nome': 'RK Metaloplastika Sabac',
-                'id_tecnico': 202105,
-                'Naipe': 'Masculino',
-                'país': 'Servia',
-                'tipo': 'Profissional',
-                'Competição_atual': 'EHF EUROPEAN CUP'
-            },
-            {
-                'id_time': 2021303,
-                'nome': 'Herpertz Bevo HC',
-                'id_tecnico': 202106,
-                'Naipe': 'Masculino',
-                'país': 'Paises Baixos',
-                'tipo': 'Profissional',
-                'Competição_atual': 'EHF EUROPEAN CUP'
-            },
-        ]
-    )
-    insert_rows(
-        cursor, #inserindo os dados da tabela de conexão
-        'ATLETA_para_TIME',
-        [
-            {
-                'id_atleta': 2021001,
-                'id_time': 2021201
-            },
-            {
-                'id_atleta': 2021002,
-                'id_time': 2021201
-            },
-            {
-                'id_atleta': 2021003,
-                'id_time': 2021201
-            },
-            {
-                'id_atleta': 2021004,
-                'id_time': 2021202
-            },
-            {
-                'id_atleta': 2021105,
-                'id_time': 2021202
-            },
-            {
-                'id_atleta': 2021106,
-                'id_time': 2021202
-            },
-            {
-                'id_atleta': 2021107,
-                'id_time': 2021202
-            },
-            {
-                'id_atleta': 2021208,
-                'id_time': 2021203
-            },
-            {
-                'id_atleta': 2021209,
-                'id_time': 2021203
-            },
-            {
-                'id_atleta': 2021210,
-                'id_time': 2021203
-            },
-            {
-                'id_atleta': 2021211,
-                'id_time': 2021203
-            },
-            {
-                'id_atleta': 2021312,
-                'id_time': 2021301
-            },
-            {
-                'id_atleta': 2021313,
-                'id_time': 2021301
-            },
-            {
-                'id_atleta': 2021314,
-                'id_time': 2021301
-            },
-            {
-                'id_atleta': 2021315,
-                'id_time': 2021301
-            },
-        ]
-    )
-    insert_rows( #Inserindo os dados da tabela de conexão
-        cursor,
-        'TECNICO_para_TIME',
-        [
-            {
-                'id_tecnico': 20211,
-                'id_time': 2021001
-            },
-            {
-                'id_tecnico': 20212,
-                'id_time': 2021102
-            },
-            {
-                'id_tecnico': 20213,
-                'id_time': 2021203
-            },
-            {
-                'id_tecnico': 202104,
-                'id_time': 2021301
-            },
-            {
-                'id_tecnico': 202105,
-                'id_time': 2021302
-            },
-            {
-                'id_tecnico': 202106,
-                'id_time': 2021303
-            },
-        ]
-    )
+                },
+                {
+                    'id_time': 2021301,
+                    'nome': 'PARIS SANG GERMAIN Handball',
+                    'id_tecnico': 202104,
+                    'Naipe': 'Masculino',
+                    'país': 'Dinamarca',
+                    'tipo': 'Profissional',
+                    'Competição_atual': 'EHF CHAMPIONS LEAGUE'
+                },
+                {
+                    'id_time': 2021302,
+                    'nome': 'RK Metaloplastika Sabac',
+                    'id_tecnico': 202105,
+                    'Naipe': 'Masculino',
+                    'país': 'Servia',
+                    'tipo': 'Profissional',
+                    'Competição_atual': 'EHF EUROPEAN CUP'
+                },
+                {
+                    'id_time': 2021303,
+                    'nome': 'Herpertz Bevo HC',
+                    'id_tecnico': 202106,
+                    'Naipe': 'Masculino',
+                    'país': 'Paises Baixos',
+                    'tipo': 'Profissional',
+                    'Competição_atual': 'EHF EUROPEAN CUP'
+                },
+            ]
+        )
+        insert_rows(
+            cursor, #inserindo os dados da tabela de conexão
+            'ATLETA_para_TIME',
+            [
+                {
+                    'id_atleta': 2021001,
+                    'id_time': 2021201
+                },
+                {
+                    'id_atleta': 2021002,
+                    'id_time': 2021201
+                },
+                {
+                    'id_atleta': 2021003,
+                    'id_time': 2021201
+                },
+                {
+                    'id_atleta': 2021004,
+                    'id_time': 2021202
+                },
+                {
+                    'id_atleta': 2021105,
+                    'id_time': 2021202
+                },
+                {
+                    'id_atleta': 2021106,
+                    'id_time': 2021202
+                },
+                {
+                    'id_atleta': 2021107,
+                    'id_time': 2021202
+                },
+                {
+                    'id_atleta': 2021208,
+                    'id_time': 2021203
+                },
+                {
+                    'id_atleta': 2021209,
+                    'id_time': 2021203
+                },
+                {
+                    'id_atleta': 2021210,
+                    'id_time': 2021203
+                },
+                {
+                    'id_atleta': 2021211,
+                    'id_time': 2021203
+                },
+                {
+                    'id_atleta': 2021312,
+                    'id_time': 2021301
+                },
+                {
+                    'id_atleta': 2021313,
+                    'id_time': 2021301
+                },
+                {
+                    'id_atleta': 2021314,
+                    'id_time': 2021301
+                },
+                {
+                    'id_atleta': 2021315,
+                    'id_time': 2021301
+                },
+            ]
+        )
+        insert_rows( #Inserindo os dados da tabela de conexão
+            cursor,
+            'TECNICO_para_TIME',
+            [
+                {
+                    'id_tecnico': 20211,
+                    'id_time': 2021001
+                },
+                {
+                    'id_tecnico': 20212,
+                    'id_time': 2021102
+                },
+                {
+                    'id_tecnico': 20213,
+                    'id_time': 2021203
+                },
+                {
+                    'id_tecnico': 202104,
+                    'id_time': 2021301
+                },
+                {
+                    'id_tecnico': 202105,
+                    'id_time': 2021302
+                },
+                {
+                    'id_tecnico': 202106,
+                    'id_time': 2021303
+                },
+            ]
+        )
 
 
 if __name__ == '__main__':
