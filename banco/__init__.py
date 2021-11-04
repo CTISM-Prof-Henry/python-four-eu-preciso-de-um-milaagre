@@ -71,6 +71,8 @@ def main(path: str = '.', db_name: str = 'test.db') -> None:
     with SQLite( os.path.join( path, db_name ) ) as cursor:
         # todas as tabelas possuem mais de 4 colunas
         # foram feitas mais de 4 tabelas
+
+
         create_table(
             cursor,
             'ATLETAS',  # tabela com 10 tuplas (no caso acho que tem mais)
@@ -80,6 +82,7 @@ def main(path: str = '.', db_name: str = 'test.db') -> None:
                 'codigo_cadastro': 'INTEGER NULL', 'país': 'text NOT NULL', 'Naipe': 'text NOT NULL',
                 'tipo': 'text NOT NULL'}
         )
+
         create_table(
             cursor,
             'TIMES',
@@ -88,6 +91,7 @@ def main(path: str = '.', db_name: str = 'test.db') -> None:
                 'Naipe': 'text NOT NULL', 'país': 'text NOT NULL',
                 'tipo': 'text NOT NULL', 'Competição_atual': 'text NULL'}
         )
+
         create_table(
             cursor,
             'TECNICOS',
@@ -97,6 +101,7 @@ def main(path: str = '.', db_name: str = 'test.db') -> None:
                 'treina_o_naipe': 'text NOT NULL'
             }
         )
+
         create_table(  # tabela com chave composta e estrangeira
             cursor,  # tabela de conexao entre a atletas e times interligando o id de cada um inserido
             'ATLETA_para_TIME',
@@ -104,17 +109,20 @@ def main(path: str = '.', db_name: str = 'test.db') -> None:
             ['PRIMARY KEY(id_atleta, id_time)', 'FOREIGN KEY(id_atleta) REFERENCES atleta(id)',
              'FOREIGN KEY(id_time) REFERENCES time(id)']
         )
+
         create_table(  # tabela com chave composta e estrangeira
             cursor,  # tabela de conexao entre tecnico e time interligando o id de cada um inserido
             'TECNICO_para_TIME',
             {'id_tecnico': 'INTEGER NOT NULL', 'id_time': 'INTEGER NOT NULL'},
             ['PRIMARY KEY(id_tecnico, id_time)', 'FOREIGN KEY(id_tecnico) '
             'REFERENCES tecnico(id)', 'FOREIGN KEY(id_time) REFERENCES time(id)'] )
-    insert_rows(
+
+    insert_rows(   #inserindo os dados da tebela tecnico
         cursor,
         'TECNICO',
         [
             {
+                #krim mercator
                 'id_tecnico': 20211,
                 'nome': 'Natalia Derepasko',
                 'país': 'Eslovenia',
@@ -124,6 +132,7 @@ def main(path: str = '.', db_name: str = 'test.db') -> None:
                 'treina_o_naipe': 'Feminino'
             },
             {
+                #Odense Handebold
                 'id_tecnico': 20212,
                 'nome': 'Ulrik Kirkely',
                 'país': 'Dinamarca',
@@ -133,6 +142,7 @@ def main(path: str = '.', db_name: str = 'test.db') -> None:
                 'treina_o_naipe': 'Feminino'
             },
             {
+                #Rocasa Gran Canaria
                 'id_tecnico': 20213,
                 'nome': 'Robert Cuesta',
                 'país': 'Espanha',
@@ -142,6 +152,7 @@ def main(path: str = '.', db_name: str = 'test.db') -> None:
                 'treina_o_naipe': 'Feminino'
             },
             {
+                #PSG
                 'id_tecnico': 202104,
                 'nome': 'Regis Boxele',
                 'país': 'França',
@@ -151,6 +162,7 @@ def main(path: str = '.', db_name: str = 'test.db') -> None:
                 'treina_o_naipe': 'Masculino'
             },
             {
+                #RK
                 'id_tecnico': 202105,
                 'nome': 'Miodrag Kazic',
                 'país': 'Montenegro',
@@ -160,6 +172,7 @@ def main(path: str = '.', db_name: str = 'test.db') -> None:
                 'treina_o_naipe': 'Masculino'
             },
             {
+                #Bevo HC
                 'id_tecnico': 202106,
                 'nome': 'Peter Kersten',
                 'país': 'Paises Baixos',
@@ -171,7 +184,7 @@ def main(path: str = '.', db_name: str = 'test.db') -> None:
         ]
     )
 
-    insert_rows(
+    insert_rows( #inserindo os dados da tabela atleta
         cursor,
         'ATLETAS',
         [
@@ -420,7 +433,7 @@ def main(path: str = '.', db_name: str = 'test.db') -> None:
         ]
     )
     insert_rows(
-        cursor,
+        cursor, #inserindo os dados da tabela de conexão
         'ATLETA_para_TIME',
         [
             {
@@ -485,7 +498,7 @@ def main(path: str = '.', db_name: str = 'test.db') -> None:
             },
         ]
     )
-    insert_rows(
+    insert_rows( #Inserindo os dados da tabela de conexão
         cursor,
         'TECNICO_para_TIME',
         [
